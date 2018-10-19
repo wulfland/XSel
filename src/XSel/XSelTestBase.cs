@@ -8,31 +8,32 @@ namespace XSel
 {
     public abstract class XSelTestBase
     {
-        public RemoteWebDriver WebDriver { get; private set; }
+        protected RemoteWebDriver _driver;
 
-        public WebDriverWait WebDriverWait { get; private set; }
+        protected WebDriverWait _wait;
 
         public void Initialize(string windowSize = "Max")
         {
-            WebDriver = Driver.GetChromeDriver();
+            _driver = Driver.GetChromeDriver();
 
             var browserSize = BrowserSize.Parse(windowSize);
 
             if (browserSize is BrowserSizeMaximized)
             {
-                WebDriver.Manage().Window.Maximize();
+                _driver.Manage().Window.Maximize();
             }
             else
             {
-                WebDriver.Manage().Window.Size = browserSize.ToSize();
+                _driver.Manage().Window.Size = browserSize.ToSize();
             }
 
-            WebDriverWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(4));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
         }
 
         public void CleanUp()
         {
-            WebDriver.Close();
+            _driver.Close();
+            _driver.Quit();
         }
     }
 }

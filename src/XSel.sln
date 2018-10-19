@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSel", "XSel\XSel.csproj", "{5BFBDDA2-ED54-4E03-96CE-CF96D12D5E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSel", "XSel\XSel.csproj", "{5BFBDDA2-ED54-4E03-96CE-CF96D12D5E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSel.Tests", "XSel.Tests\XSel.Tests.csproj", "{3CB5F066-3E6B-4FCD-B664-718D4DC14871}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSel.Tests", "XSel.Tests\XSel.Tests.csproj", "{3CB5F066-3E6B-4FCD-B664-718D4DC14871}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{157D74B1-9343-4D6F-BE33-35BABDA1E44E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSel.Samples.SimpleChromeTests", "..\samples\XSel.Samples.SimpleChromeTests\XSel.Samples.SimpleChromeTests.csproj", "{052408A5-127C-4319-986A-29E010829D8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5BFBDDA2-ED54-4E03-96CE-CF96D12D5E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +45,26 @@ Global
 		{3CB5F066-3E6B-4FCD-B664-718D4DC14871}.Release|x64.Build.0 = Release|Any CPU
 		{3CB5F066-3E6B-4FCD-B664-718D4DC14871}.Release|x86.ActiveCfg = Release|Any CPU
 		{3CB5F066-3E6B-4FCD-B664-718D4DC14871}.Release|x86.Build.0 = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|x64.Build.0 = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Debug|x86.Build.0 = Debug|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|x64.ActiveCfg = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|x64.Build.0 = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|x86.ActiveCfg = Release|Any CPU
+		{052408A5-127C-4319-986A-29E010829D8D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{052408A5-127C-4319-986A-29E010829D8D} = {157D74B1-9343-4D6F-BE33-35BABDA1E44E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E31FD074-5ACC-45DD-950D-4D826D5AD4AE}
 	EndGlobalSection
 EndGlobal
