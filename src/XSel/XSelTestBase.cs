@@ -16,6 +16,13 @@ namespace XSel
         {
             _driver = Driver.GetChromeDriver();
 
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
+
+            ChangeBrowserSize(windowSize);
+        }
+
+        public void ChangeBrowserSize(string windowSize)
+        {
             var browserSize = BrowserSize.Parse(windowSize);
 
             if (browserSize is BrowserSizeMaximized)
@@ -26,8 +33,6 @@ namespace XSel
             {
                 _driver.Manage().Window.Size = browserSize.ToSize();
             }
-
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
         }
 
         public void CleanUp()
