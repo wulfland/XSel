@@ -14,7 +14,9 @@ namespace XSel.Samples
         [Test]
         public void Samples_SimpleChromeTest()
         {
-            _driver.Navigate().GoToUrl("https://writeabout.net");
+            var url = TestContext.Parameters["webAppUrl"];
+
+            _driver.Navigate().GoToUrl(url);
 
             var searchBox = _wait.Until(
                 d => d.FindElement(
