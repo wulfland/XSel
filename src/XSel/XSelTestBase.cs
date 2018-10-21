@@ -12,13 +12,11 @@ namespace XSel
 
         protected WebDriverWait _wait;
 
-        public void Initialize(string windowSize = "Max")
+        public void Initialize(string mobileEmulatedDevice = null)
         {
-            _driver = Driver.GetChromeDriver();
+            _driver = Driver.GetChromeDriver(mobileEmulatedDevice);
 
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
-
-            ChangeBrowserSize(windowSize);
         }
 
         public void ChangeBrowserSize(string windowSize)

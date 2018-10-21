@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -10,11 +11,16 @@ namespace XSel
 {
     public static class Driver
     {
-        public static RemoteWebDriver GetChromeDriver()
+        public static RemoteWebDriver GetChromeDriver(string mobileEmulatedDevice = null)
         {
             var path = Environment.GetEnvironmentVariable("ChromeWebDriver");
             var options = new ChromeOptions();
             options.AddArguments("--no-sandbox");
+
+            if (!string.IsNullOrEmpty(mobileEmulatedDevice ))
+            {
+                options.EnableMobileEmulation(mobileEmulatedDevice);
+            }
 
             if (!string.IsNullOrWhiteSpace(path))
             {
