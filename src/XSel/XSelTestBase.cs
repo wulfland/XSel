@@ -19,7 +19,7 @@ namespace XSel
         {
             _driver = Driver.GetChromeDriver(mobileEmulatedDevice);
 
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
         }
 
         public void ChangeBrowserSize(string windowSize)
