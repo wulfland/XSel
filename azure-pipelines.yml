@@ -1,22 +1,25 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 pool:
-  vmImage: 'Ubuntu 16.04' # other options: 'macOS-10.13', 'vs2017-win2016'
+  vmImage: 'vs2017-win2016' # other options: 'Ubuntu 16.04', 'macOS-10.13', 'vs2017-win2016'
 
 variables:
   buildConfiguration: 'Release'
+  packageVersion: '0.0.1'
 
 steps:
-- script: dotnet restore
-  displayName: 'dotnet restore'
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- script: 
+   dotnet restore
+   dotnet build --configuration $(buildConfiguration)
+   dotnet pack /p:PackageVersion=$(packageVersion) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
+  
 - task: DotNetCoreCLI@2
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-- script: dotnet pack /p:PackageVersion=$(version)
+
+- task: PublishTestResults@2
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
+
+- task: PublishBuildArtifacts@1
