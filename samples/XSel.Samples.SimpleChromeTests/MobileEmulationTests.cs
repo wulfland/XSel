@@ -31,6 +31,8 @@ namespace XSel.Samples
 
             button.Click();
 
+            WaitForPageLoad();
+
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
             Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);

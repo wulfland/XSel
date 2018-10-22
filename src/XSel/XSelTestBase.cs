@@ -57,6 +57,14 @@ namespace XSel
             }
         }
 
+        protected void WaitForPageLoad()
+        {
+            _wait.Until(d => ((RemoteWebDriver)d)
+                .ExecuteScript("return document.readyState")
+                .Equals("complete")
+            );
+        }
+
         public void CleanUp()
         {
             _driver.Close();
