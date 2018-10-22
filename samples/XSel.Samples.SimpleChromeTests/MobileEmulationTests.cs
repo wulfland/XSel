@@ -10,7 +10,6 @@ namespace XSel.Samples
     {
         [TestCase("iPad")]
         [TestCase("iPhone X")]
-        [TestCase("iPhone X")]
         [TestCase("Pixel 2 XL")]
         public void Sample_SimpleMobileEmulationTest(string mobileEmulatedDevice)
         {
@@ -31,6 +30,8 @@ namespace XSel.Samples
                 By.CssSelector("#search-4 > form > button")));
 
             button.Click();
+
+            TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
             Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
 
