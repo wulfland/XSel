@@ -45,4 +45,9 @@ steps:
 
 
 - task: PublishBuildArtifacts@1
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    displayName: "Publish artifacts"
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
+      ArtifactName: app
+      publishLocation: Container
+      
