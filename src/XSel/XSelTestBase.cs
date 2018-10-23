@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace XSel
 {
@@ -59,6 +60,10 @@ namespace XSel
 
         protected void WaitForPageLoad()
         {
+            // give the postback time...
+            Thread.Sleep(1000);
+
+            // wait for the dom to load
             _wait.Until(d => ((RemoteWebDriver)d)
                 .ExecuteScript("return document.readyState")
                 .Equals("complete")

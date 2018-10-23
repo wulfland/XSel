@@ -1,10 +1,6 @@
-﻿using Moq;
+﻿using FluentAssertions;
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentAssertions;
 using System.IO;
 using System.Reflection;
 
@@ -15,15 +11,13 @@ namespace XSel.Tests
         [Test]
         public void Driver_GetChromeDriver_SearchDriverInEnvPath()
         {
-            Environment.SetEnvironmentVariable("ChromeWebDriver", "XXXX");
+            Environment.SetEnvironmentVariable("ChromeWebDriver", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), EnvironmentVariableTarget.Process);
 
-            Action act = () => {
-                Driver.GetChromeDriver();
-            };
+            var driver = Driver.GetChromeDriver();
+            driver.Should().NotBeNull();
 
-            act.Should()
-                .Throw<OpenQA.Selenium.DriverServiceNotFoundException>()
-                .WithMessage("The file XXXX\\chromedriver.exe does not exist. The driver can be downloaded at http://chromedriver.storage.googleapis.com/index.html");
+            driver.Close();
+            driver.Quit();
         }
     }
 }
