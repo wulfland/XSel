@@ -19,7 +19,6 @@ steps:
     projects: '$(Parameters.RestoreBuildProjects)'
     arguments: '--configuration $(BuildConfiguration)'
 
-   dotnet pack /p:PackageVersion=$(packageVersion) --output $BUILD_ARTIFACTSTAGINGDIRECTORY  
 
 - task: DotNetCoreCLI@2
   displayName: Test
@@ -28,7 +27,8 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --collect:"Code Coverage" -s $(Build.SourcesDirectory)/samples/functionalTests.runsettings ' 
     continueOnError: true
-  
+
+
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
@@ -37,10 +37,12 @@ steps:
     versioningScheme: byEnvVar
     versionEnvVar: packageVersion
 
+
 - task: PublishTestResults@2
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
+
 
 - task: PublishBuildArtifacts@1
     PathtoPublish: '$(build.artifactstagingdirectory)'
