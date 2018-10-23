@@ -48,6 +48,4 @@ steps:
     displayName: 'Publish artifacts'
     inputs:
       PathtoPublish: '$(build.artifactstagingdirectory)'
-      ArtifactName: app
-      publishLocation: Container
       
