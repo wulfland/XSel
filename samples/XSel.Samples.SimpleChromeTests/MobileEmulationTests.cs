@@ -29,9 +29,19 @@ namespace XSel.Samples
                 d => d.FindElement(
                 By.CssSelector("#search-4 > form > button")));
 
+            TestContext.WriteLine($"PageSource: {_driver.PageSource}");
+            TestContext.WriteLine($"Title: {_driver.Title}");
+            TestContext.WriteLine($"Url: {_driver.Url}");
+
+            TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}_1.png");
+
             button.Click();
 
             WaitForPageLoad();
+
+            TestContext.WriteLine($"PageSource: {_driver.PageSource}");
+            TestContext.WriteLine($"Title: {_driver.Title}");
+            TestContext.WriteLine($"Url: {_driver.Url}");
 
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
