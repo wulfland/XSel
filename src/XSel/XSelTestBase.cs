@@ -61,7 +61,7 @@ namespace XSel
         protected void WaitForPageLoad()
         {
             // give the postback time...
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             // wait for the dom to load
             _wait.Until(d => ((RemoteWebDriver)d)
