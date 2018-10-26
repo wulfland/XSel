@@ -19,33 +19,17 @@ namespace XSel.Samples
 
             _driver.Navigate().GoToUrl(url);
 
-            var searchBox = _wait.Until(
-                d => d.FindElement(
-                    By.CssSelector("#search-4 > form > label > input")));
-
-            searchBox.SendKeys("DevOps");
-
             var button = _wait.Until(
                 d => d.FindElement(
-                By.CssSelector("#search-4 > form > button")));
-
-            TestContext.WriteLine($"PageSource: {_driver.PageSource}");
-            TestContext.WriteLine($"Title: {_driver.Title}");
-            TestContext.WriteLine($"Url: {_driver.Url}");
-
-            TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}_1.png");
+                By.CssSelector("#slide-1620 > div.slide-content.clearfix > div.read-more > a")));
 
             button.Click();
 
-            WaitForPageLoad();
-
-            TestContext.WriteLine($"PageSource: {_driver.PageSource}");
-            TestContext.WriteLine($"Title: {_driver.Title}");
-            TestContext.WriteLine($"Url: {_driver.Url}");
+            var heading = _wait.Until(d => d.FindElement(By.CssSelector("#post-1620 > header > h1")));
 
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
-            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
+            Assert.AreEqual("FAIL YOUR AZURE DEVOPS PIPELINE IF SONARQUBE QUALITY GATE FAILS", heading.Text);
 
         }
 
