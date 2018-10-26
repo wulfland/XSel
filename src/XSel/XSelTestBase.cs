@@ -20,7 +20,7 @@ namespace XSel
         {
             _driver = Driver.GetChromeDriver(mobileEmulatedDevice);
 
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
         }
 
         public void ChangeBrowserSize(string windowSize)
@@ -58,11 +58,8 @@ namespace XSel
             }
         }
 
-        protected void WaitForPageLoad()
+        protected void WaitForDomReady()
         {
-            // give the postback time...
-            Thread.Sleep(3000);
-
             // wait for the dom to load
             _wait.Until(d => ((RemoteWebDriver)d)
                 .ExecuteScript("return document.readyState")

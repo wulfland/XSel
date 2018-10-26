@@ -30,8 +30,6 @@ namespace XSel.Samples
 
             button.Click();
 
-            WaitForPageLoad();
-
             Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
         }
 
@@ -57,8 +55,6 @@ namespace XSel.Samples
                 By.CssSelector("#search-4 > form > button")));
 
             button.Click();
-
-            WaitForPageLoad();
 
             Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
         }
