@@ -19,17 +19,19 @@ namespace XSel.Samples
 
             _driver.Navigate().GoToUrl(url);
 
+            var searchBox = _wait.Until(
+                d => d.FindElement(By.Name("s")));
+
+            searchBox.SendKeys("DevOps");
+
             var button = _wait.Until(
-                d => d.FindElement(
-                By.CssSelector("#slide-1620 > div.slide-content.clearfix > div.read-more > a")));
+                d => d.FindElement(By.ClassName("search-submit")));
 
             button.Click();
 
-            var heading = _wait.Until(d => d.FindElement(By.CssSelector("#post-1620 > header > h1")));
-
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
-            Assert.AreEqual("FAIL YOUR AZURE DEVOPS PIPELINE IF SONARQUBE QUALITY GATE FAILS", heading.Text);
+            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
 
         }
 
