@@ -5,6 +5,12 @@
     <Version>0.0.1</Version>
     <Authors>Michael Kaufmann</Authors>
     <Description>A base package that helps with x browser tests in Azure DevOps</Description>
+    <PackageIconUrl>https://github.com/wulfland/XSel/raw/master/icon/Icon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/wulfland/XSel</RepositoryUrl>
+    <PackageTags>Selenium,UITest,Azure,DevOps</PackageTags>
+    <PackageProjectUrl>https://github.com/wulfland/XSel</PackageProjectUrl>
+    <Copyright>2019 Michael Kaufmann</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/wulfland/XSel/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>

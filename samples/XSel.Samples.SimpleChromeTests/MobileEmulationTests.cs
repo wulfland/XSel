@@ -26,13 +26,17 @@ namespace XSel.Samples
 
             var button = _wait.Until(d => d.FindElement(By.ClassName("search-submit")));
 
-            button.Click();
+            var oldTitle = _driver.Title;
+
+            button.Submit();
 
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
-            string title = _wait.Until(d => d.Title);
+            _wait.Until(d => d.Title != oldTitle);
 
-            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", title);
+            var newTitle = _wait.Until(d => d.Title);
+
+            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", newTitle);
 
         }
 
