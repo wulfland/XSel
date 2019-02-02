@@ -24,14 +24,15 @@ namespace XSel.Samples
 
             searchBox.SendKeys("DevOps");
 
-            var button = _wait.Until(
-                d => d.FindElement(By.ClassName("search-submit")));
+            var button = _wait.Until(d => d.FindElement(By.ClassName("search-submit")));
 
             button.Click();
 
             TakeScreenshot($"Sample_SimpleMobileEmulationTest_{mobileEmulatedDevice}.png");
 
-            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", _driver.Title);
+            string title = _wait.Until(d => d.Title);
+
+            Assert.AreEqual("Search Results for “DevOps” – writeabout.net", title);
 
         }
 
