@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{157D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSel.Samples.SimpleChromeTests", "..\samples\XSel.Samples.SimpleChromeTests\XSel.Samples.SimpleChromeTests.csproj", "{052408A5-127C-4319-986A-29E010829D8D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSel.Samples.XBrowserTests", "..\samples\XSel.Samples.XBrowserTests\XSel.Samples.XBrowserTests.csproj", "{55025A56-BC15-42E5-881E-6D7C71616B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,12 +59,25 @@ Global
 		{052408A5-127C-4319-986A-29E010829D8D}.Release|x64.Build.0 = Release|Any CPU
 		{052408A5-127C-4319-986A-29E010829D8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{052408A5-127C-4319-986A-29E010829D8D}.Release|x86.Build.0 = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|x64.Build.0 = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Debug|x86.Build.0 = Debug|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|x64.ActiveCfg = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|x64.Build.0 = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|x86.ActiveCfg = Release|Any CPU
+		{55025A56-BC15-42E5-881E-6D7C71616B38}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{052408A5-127C-4319-986A-29E010829D8D} = {157D74B1-9343-4D6F-BE33-35BABDA1E44E}
+		{55025A56-BC15-42E5-881E-6D7C71616B38} = {157D74B1-9343-4D6F-BE33-35BABDA1E44E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E31FD074-5ACC-45DD-950D-4D826D5AD4AE}
