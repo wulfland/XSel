@@ -7,7 +7,7 @@ using OpenQA.Selenium.IE;
 namespace XSel.Samples
 {
     [TestFixture(typeof(ChromeDriver))]
-    //[TestFixture(typeof(FirefoxDriver))]
+    [TestFixture(typeof(FirefoxDriver))]
     [TestFixture(typeof(InternetExplorerDriver))]
     public class XBrowserTest<TWebDriver> : XSelTestBase where TWebDriver : IWebDriver, new()
     {
