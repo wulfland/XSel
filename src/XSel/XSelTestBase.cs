@@ -12,13 +12,20 @@ namespace XSel
 {
     public abstract class XSelTestBase
     {
-        protected RemoteWebDriver _driver;
+        protected IWebDriver _driver;
 
         protected WebDriverWait _wait;
 
         public void Initialize(string mobileEmulatedDevice = null)
         {
             _driver = Driver.GetChromeDriver(mobileEmulatedDevice);
+
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
+        }
+
+        public void Initialize<TWebDriver>(string mobileEmulatedDevice = null) where TWebDriver : IWebDriver, new()
+        {
+            _driver = Driver.GetDriver<TWebDriver>(mobileEmulatedDevice);
 
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
         }
@@ -48,7 +55,7 @@ namespace XSel
             {
                 var screenshot = Path.Combine(TestContext.CurrentContext.TestDirectory, filename);
 
-                _driver.GetScreenshot().SaveAsFile(screenshot, format);
+                ((RemoteWebDriver)_driver).GetScreenshot().SaveAsFile(screenshot, format);
 
                 TestContext.AddTestAttachment(screenshot);
             }
