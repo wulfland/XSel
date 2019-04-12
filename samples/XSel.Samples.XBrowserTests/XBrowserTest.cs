@@ -7,7 +7,7 @@ using OpenQA.Selenium.IE;
 namespace XSel.Samples
 {
     [TestFixture(typeof(ChromeDriver))]
-    [TestFixture(typeof(FirefoxDriver))]
+    //[TestFixture(typeof(FirefoxDriver))]
     [TestFixture(typeof(InternetExplorerDriver))]
     public class XBrowserTest<TWebDriver> : XSelTestBase where TWebDriver : IWebDriver, new()
     {
@@ -32,7 +32,7 @@ namespace XSel.Samples
 
             string title = _wait.Until(d => d.Title);
 
-            Assert.AreEqual("Search Results for ìDevOpsî ñ writeabout.net", title);
+            Assert.AreEqual("Search Results for ‚ÄúDevOps‚Äù ‚Äì writeabout.net", title);
         }
 
         [TearDown]
