@@ -3,7 +3,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  packageVersion: '0.0.1'
+  packageVersion: '0.1.0'
 
 steps:
 - task: DotNetCoreCLI@2
